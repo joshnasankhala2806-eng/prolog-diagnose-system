@@ -1,0 +1,26 @@
+symptom(flu,fever).
+symptom(flu,cough).
+symptom(migrane,headache).
+symptom(migrane,nausea).
+symptom(cold,sneezing).
+symptom(cold,sore_throat).
+symptom(covid,fever).
+symptom(covid,chest_pain).
+symptom(typhoid,fever).
+symptom(typhoid,stomach_pain).
+symptom(allergy,sneezing).
+symptom(allergy,itching).
+symptom(dengue,rash).
+symptom(dengue,joint_pain).
+symptom(food_poisoning,vomiting).
+symptom(food_poisoning,diarrhea).
+has_symptom(Disease,S1,S2):-
+    symptom(Disease,S1),
+    symptom(Disease,S2).
+diagnose :-
+    write('enter  first symptom '),
+    read(S1),
+    write('enter second symptom'),
+    read(S2),
+    has_symptom(D,S1,S2),
+    write('you may have:'),write(D).
